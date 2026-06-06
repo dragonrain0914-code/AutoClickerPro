@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red_primary">#FF2222</color>
+    <color name="red_dark">#CC0000</color>
+    <color name="bg_dark">#0D0D0D</color>
+    <color name="bg_card">#1A1A1A</color>
+    <color name="bg_input">#2A2A2A</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#AAAAAA</color>
+    <color name="text_hint">#555555</color>
+    <color name="state_running">#00FF44</color>
+    <color name="state_paused">#FFAA00</color>
+    <color name="state_stopped">#888888</color>
+</resources>

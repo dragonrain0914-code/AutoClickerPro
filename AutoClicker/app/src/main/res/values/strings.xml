@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AutoClicker Pro</string>
+    <string name="accessibility_service_label">AutoClicker 連點服務</string>
+    <string name="accessibility_service_description">AutoClicker 使用無障礙服務執行自動點擊。此服務不讀取任何螢幕內容，僅用於模擬觸控手勢。</string>
+</resources>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AutoClicker Pro"
+            android:textColor="#FF4444"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="高速無障礙連點器"
+            android:textColor="#666666"
+            android:textSize="13sp"
+            android:paddingBottom="16dp" />
+
+        <!-- 狀態卡 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1A1A1A"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="狀態" android:textColor="#555555" android:textSize="11sp" />
+                <TextView android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="STOPPED" android:textColor="#888888"
+                    android:textSize="14sp" android:textStyle="bold" android:fontFamily="monospace" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="總點擊數" android:textColor="#555555" android:textSize="11sp" />
+                <TextView android:id="@+id/tvClickCount"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="0" android:textColor="#FFFFFF"
+                    android:textSize="14sp" android:textStyle="bold" android:fontFamily="monospace" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="點擊率" android:textColor="#555555" android:textSize="11sp" />
+                <TextView android:id="@+id/tvCps"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="0.0 clicks/s" android:textColor="#FFFFFF"
+                    android:textSize="14sp" android:textStyle="bold" android:fontFamily="monospace" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 權限區 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="權限設置" android:textColor="#AAAAAA" android:textSize="12sp"
+            android:paddingBottom="8dp" android:textAllCaps="true" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="#1A1A1A" android:orientation="vertical" android:padding="12dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+                <TextView android:id="@+id/tvPermOverlay"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="懸浮窗權限：未授予"
+                    android:textColor="#FF4444" android:textSize="13sp" />
+                <Button android:id="@+id/btnGrantOverlay"
+                    android:layout_width="wrap_content" android:layout_height="32dp"
+                    android:text="授予" android:textSize="12sp"
+                    style="@style/Widget.AppCompat.Button.Colored" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:id="@+id/tvPermAccessibility"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="無障礙服務：未啟用"
+                    android:textColor="#FF4444" android:textSize="13sp" />
+                <Button android:id="@+id/btnGrantAccessibility"
+                    android:layout_width="wrap_content" android:layout_height="32dp"
+                    android:text="開啟" android:textSize="12sp"
+                    style="@style/Widget.AppCompat.Button.Colored" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 設定區 -->
+        <View android:id="@+id/cardSettings"
+            android:layout_width="0dp" android:layout_height="0dp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="點擊設定" android:textColor="#AAAAAA" android:textSize="12sp"
+            android:paddingBottom="8dp" android:textAllCaps="true" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="#1A1A1A" android:orientation="vertical" android:padding="12dp"
+            android:layout_marginBottom="12dp">
+
+            <!-- 點擊模式 -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="點擊模式" android:textColor="#AAAAAA" android:textSize="12sp"
+                android:paddingBottom="4dp" />
+            <Spinner android:id="@+id/spinnerMode"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:background="#2A2A2A" android:layout_marginBottom="12dp" />
+
+            <!-- 點擊間隔 -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="點擊間隔" android:textColor="#AAAAAA" android:textSize="12sp"
+                android:paddingBottom="4dp" />
+            <Spinner android:id="@+id/spinnerInterval"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:background="#2A2A2A" android:layout_marginBottom="8dp" />
+            <EditText android:id="@+id/etCustomInterval"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:hint="自訂間隔 (ms)" android:inputType="number"
+                android:visibility="gone" android:textColor="#FFFFFF"
+                android:background="#2A2A2A" android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- 雙點模式設定 -->
+            <LinearLayout android:id="@+id/layoutDual"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:visibility="gone">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="A→B 間隔 (ms)" android:textColor="#AAAAAA" android:textSize="12sp"
+                    android:paddingBottom="4dp" />
+                <EditText android:id="@+id/etDualInterval"
+                    android:layout_width="match_parent" android:layout_height="48dp"
+                    android:text="10" android:inputType="number"
+                    android:textColor="#FFFFFF" android:background="#2A2A2A"
+                    android:padding="8dp" android:layout_marginBottom="8dp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textColor="#666666" android:textSize="11sp"
+                    android:text="A/B 座標請從懸浮窗目標點設定" />
+            </LinearLayout>
+
+            <!-- 多點模式設定 -->
+            <LinearLayout android:id="@+id/layoutMulti"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:visibility="gone">
+                <LinearLayout android:id="@+id/llMultiPoints"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+                <Button android:id="@+id/btnAddPoint"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:text="+ 新增點位" android:textSize="12sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 啟動按鈕 -->
+        <Button android:id="@+id/btnStartOverlay"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="啟動懸浮控制面板"
+            android:textSize="16sp" android:textStyle="bold"
+            android:backgroundTint="#FF2222"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <Button android:id="@+id/btnQuickStop"
+            android:layout_width="match_parent" android:layout_height="48dp"
+            android:text="緊急停止"
+            android:textSize="14sp"
+            android:backgroundTint="#333333"
+            android:textColor="#FF4444"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 說明 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="使用說明：\n1. 授予所有權限\n2. 設定點擊間隔與模式\n3. 點擊「啟動懸浮控制面板」\n4. 拖曳紅色目標點到點擊位置\n5. 按懸浮面板的 Start 開始連點"
+            android:textColor="#555555" android:textSize="12sp"
+            android:lineSpacingMultiplier="1.4" />
+
+    </LinearLayout>
+</ScrollView>

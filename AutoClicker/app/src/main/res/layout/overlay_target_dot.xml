@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="120dp">
+
+    <!-- 紅色目標圓 -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/target_dot" />
+
+    <!-- 十字線 水平 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:background="#88FF0000" />
+
+    <!-- 十字線 垂直 -->
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="#88FF0000" />
+
+    <!-- 座標文字 -->
+    <TextView
+        android:id="@+id/tvCoords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="X:540 Y:960"
+        android:textColor="#FFFFFF"
+        android:textSize="9sp"
+        android:fontFamily="monospace"
+        android:background="#AA000000"
+        android:padding="2dp" />
+
+</FrameLayout>
